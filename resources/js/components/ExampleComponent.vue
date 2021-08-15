@@ -20,6 +20,11 @@
                 url: '/api/images',
                 uploadMultiple: true,
                 parallelUploads: 10,
+                init: function() {
+                    this.on("queuecomplete", function (file) {
+                        location.reload();
+                    });
+                }
             });
         }
     }
