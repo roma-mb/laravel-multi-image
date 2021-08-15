@@ -17,5 +17,10 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/', [UploadsController::class, 'index']);
+Route::get('/', [UploadsController::class, 'index'])->name('welcome');
+
+Route::get('/dropzone-vue-example', function () {
+    return view('index');
+})->name('dropzone-example');
+
 Route::delete('/images/{imageUpload}', [UploadsController::class, 'destroy']);

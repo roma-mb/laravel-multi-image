@@ -31,6 +31,11 @@
                     </div>
                 @endforeach
             </div>
+            <div class="row">
+                <a href="{{ route('dropzone-example') }}">
+                    <button type="submit" class="btn btn-dark">Dropzone Vue example</button>
+                </a>
+            </div>
         </div>
     </body>
     <script src="{{ mix('/js/app.js') }}"></script>
