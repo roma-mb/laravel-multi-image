@@ -1866,7 +1866,12 @@ __webpack_require__.r(__webpack_exports__);
     this.dropzone = new (dropzone__WEBPACK_IMPORTED_MODULE_0___default())(this.$refs.imageUpload, {
       url: '/api/images',
       uploadMultiple: true,
-      parallelUploads: 10
+      parallelUploads: 10,
+      init: function init() {
+        this.on("queuecomplete", function (file) {
+          location.reload();
+        });
+      }
     });
   }
 });
